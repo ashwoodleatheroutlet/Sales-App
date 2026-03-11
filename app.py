@@ -12,7 +12,7 @@ import re
 
 pd.options.mode.chained_assignment = None
 
-df = pd.read_csv('Transactions.csv', delimiter=';', dtype=str)
+df = pd.read_csv('Transactions.csv', dtype=str)
 temp = df['Date created'].str.split(' - ', expand=True)
 df['Date'] = pd.to_datetime(temp[0], format='%d/%m/%Y')
 df['Offer SKU'] = df['Offer SKU'].replace(['0004925700', '0004928100', '0004928200', '0004928800', '0004555700', '0004933600'], ['0005346800', '0005347000', '0005346900', '0005347100', '0005310300', '0005347200'])
