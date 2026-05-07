@@ -23,7 +23,7 @@ style = style[style['Style'] != 'Style']
 style = style[~style['Category'].isna()]
 style = style[['Style', 'Category', 'Department']]
 
-fe = pd.read_csv('Fashione EAN 04-02-26.csv', dtype=str)
+fe = pd.read_csv('Fashione-EAN 07-05-2026.csv', dtype=str)
 fe['Offer SKU'] = fe['PLU']
 fe = pd.merge(fe, style, on='Style', how='left')
 fe['Size'] = fe['Size'].replace('6', '06')
